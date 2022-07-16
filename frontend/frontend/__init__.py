@@ -65,10 +65,12 @@ def joke():
     <h2> Joke </h2>
     <p> {0} </p>
     <p> <i> Joker Backend Version: {1} </i> </p>
+    <p> <i> Joker Frontend Version: {2} </i> </p>
     </body>
     """.format(
         jokeDict['Joke'],
-        jokeDict['Version']
+        jokeDict['Version'],
+        get_version()
     )
 
 
