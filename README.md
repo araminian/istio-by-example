@@ -7,8 +7,8 @@ The goal of this repository is to help us to learn istio by some examples.
 We prepare two sample `services` : `Backend` and `Frontend`.
 
 ```mermaid
-  graph Services
-  Frontend --> Backend: getJoke
+  graph Services;
+  Frontend --> Backend: getJoke;
 ```
 
 `Backend` service is repsonsible for providing english joke in `/joke/en` path. `Frontend` request `Backend` for joke and shows it as `HTML page` in `/joke` path.
