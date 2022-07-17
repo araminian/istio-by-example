@@ -1,0 +1,25 @@
+name: CI
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+      - name: Docker Login
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Setup Just
+        uses: extractions/setup-just@v1
+      - name: Build Backend Docker Image
+        run: just backend-docker-build
+      - name: Build Frontend Docker Image
+        run: just frontend-docker-build
+      - name: Push Backend Docker Image
+        run: just backend-docker-push
+      - name: Push Frontend Docker Image
+        run: just frontend-docker-push
+        
+    
