@@ -1,0 +1,25 @@
+environment: "prod"
+branch: ""
+deploymentName: "frontend-mesh"
+
+
+replicaCount: 1
+
+image:
+  repository: rminz
+  pullPolicy: IfNotPresent
+  tag: ""
+
+podAnnotations: {}
+
+resources:
+  requests:
+    cpu: 200m
+    memory: 256Mi
+  limits:
+    cpu: 500m
+
+application:
+  INJECT_FAILURE: "0"
+  REPLY_DELAY: "0"
+  FRONTEND_VERSION: "v1"
